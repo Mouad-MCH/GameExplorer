@@ -2,12 +2,11 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav className="flex  font-press items-center w-full border-b-secondary border-b p-5 fixed inset-x-0 top-0 bg-background z-10 justify-between ">
+        <nav className="flex  font-press items-center w-full border-b-secondary border-b p-5 fixed inset-x-0 top-0 bg-background z-20 justify-between ">
             <NavLink to="/">
-                <h1 className=" text-sm">
-                    <span>Game</span>{" "}
-                    <span className="text-primary">Explorer</span>
-                </h1>
+                <span className="text-white font-press font-bold text-sm tracking-widest uppercase">
+                    GameExplorer
+                </span>
             </NavLink>
 
             <div className="flex items-center gap-10 ">

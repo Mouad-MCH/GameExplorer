@@ -129,3 +129,7 @@
 nav ul li a.active {
     @apply text-primary font-semibold border-b-2 border-t-2 border-primary rounded-sm pb-2 transition-all duration-300 pt-2;
 }
+
+nav ul li a:hover {
+    @apply text-primary;
+}

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const GameCard = ({ game }) => {
     const {
         name,
@@ -17,7 +19,7 @@ const GameCard = ({ game }) => {
     const releaseYear = released?.split("-")[0];
 
     return (
-        <div className="relative w-full  overflow-hidden border border-white/10 bg-card/30 hover:-translate-y-1 transition-transform duration-200 cursor-pointer">
+        <Link to={`/details/${game.id}`} className="relative w-full  overflow-hidden border border-white/10 bg-card/30 hover:-translate-y-1 transition-transform duration-200 cursor-pointer">
             <div className="relative">
                 <img
                     src={background_image}
@@ -67,7 +69,7 @@ const GameCard = ({ game }) => {
                     </span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

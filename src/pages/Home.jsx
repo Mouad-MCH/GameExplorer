@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
 import { getAllGames } from "../api/gamesApi";
-import {
-    ArrowBigLeftDash,
-    ArrowRight,
-    Compass,
-    Gamepad,
-    Gamepad2,
-    Map,
-} from "lucide-react";
+import { ArrowRight, Compass, Gamepad2, Map } from "lucide-react";
 import GameCard from "../components/ui/GameCard";
 import { NavLink } from "react-router-dom";
 import Button from "../components/ui/Button";
+import Spinner from "../components/ui/Spinner";
 
 const Home = () => {
     const [games, setGames] = useState([]);
@@ -35,7 +29,7 @@ const Home = () => {
 
     return (
         <div className="bg-background mt-20 text-card-foreground">
-            <div className="relative bg-[url('https://images.wallpapersden.com/image/wxl-call-of-duty-modern-warfare-2-gaming-poster_84246.jpg')] bg-cover bg-center h-screen before:absolute before:inset-0 before:bg-background/30 before:z-0">
+            <div className="relative bg-[url('https://m.media-amazon.com/images/I/71G4Kg0wFTL._AC_UF894,1000_QL80_.jpg')] bg-cover bg-center h-screen before:absolute before:inset-0 before:bg-background/30 before:z-0">
                 <div className="relative w-full z-10 flex flex-col items-start pt-40 h-full gap-4 px-10">
                     <p className="uppercase text-primary bg-primary/10 w-fit text-[10px] border border-primary/30 p-1 ">
                         new area of gaming
@@ -81,11 +75,7 @@ const Home = () => {
                 </div>
 
                 {loading ? (
-                    <div className="flex items-center justify-center py-20">
-                        <div className="size-20 flex items-center justify-center p-3 border-2 border-primary/20 border-t-primary rounded-full animate-spin">
-                            <Gamepad2 className="object-contain" />
-                        </div>
-                    </div>
+                    <Spinner />
                 ) : games.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {games.slice(0, 8).map((game) => (
@@ -107,10 +97,10 @@ const Home = () => {
 const CommunitySection = () => {
     return (
         <>
-            <section className="bg-background py-16 px-10">
+            <section className="bg-background py-16 px-4 ">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl mx-auto">
                     <div
-                        className="relative  overflow-hidden min-h-96 bg-[url('https://images.wallpapersden.com/image/wxl-call-of-duty-modern-warfare-2-gaming-poster_84246.jpg')] bg-cover bg-center
+                        className="relative overflow-hidden min-h-96 bg-[url('https://images.wallpapersden.com/image/wxl-call-of-duty-modern-warfare-2-gaming-poster_84246.jpg')] bg-cover bg-center
             before:absolute before:inset-0 before:bg-black/50 before:z-0"
                     >
                         <div className="relative z-10 flex flex-col justify-end h-full p-8">

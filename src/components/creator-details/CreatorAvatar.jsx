@@ -1,5 +1,3 @@
-import React from "react";
-
 const CreatorAvatar = ({ creator }) => {
     if (!creator.image) {
         return (

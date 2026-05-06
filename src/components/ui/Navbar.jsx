@@ -1,3 +1,4 @@
+import { Code2, Crown, Gamepad2 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -12,17 +13,32 @@ const Navbar = () => {
             <div className="flex items-center gap-10 ">
                 <ul className="flex  text-[10px] items-center gap-5 justify-center">
                     <li>
-                        <NavLink to="/games">Games</NavLink>
+                        <NavLink
+                            className={"flex items-center gap-2 p-3"}
+                            to="/games"
+                        >
+                            <Gamepad2 size={16} /> Games
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/creators">Creators</NavLink>
+                        <NavLink
+                            className={"flex items-center gap-2 p-3"}
+                            to="/creators"
+                        >
+                            <Crown size={16} /> Creators
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/developpers">Developers</NavLink>
+                        <NavLink
+                            className={"flex items-center gap-2 p-3"}
+                            to="/developpers"
+                        >
+                            <Code2 size={16} /> Developers
+                        </NavLink>
                     </li>
                 </ul>
                 <img
-                    className="size-10 rounded-full"
+                    className="size-10 rounded-lg"
                     src="/public/user-icon.jpg"
                     alt=""
                 />

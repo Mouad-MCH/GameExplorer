@@ -127,22 +127,20 @@
 }
 
 nav ul li a.active {
-    @apply text-primary font-semibold border-b-2 border-t-2 border-primary rounded-sm pb-2 transition-all duration-300 pt-2;
+    @apply text-primary bg-primary/20;
 }
 
 nav ul li a:hover {
     @apply text-primary;
 }
 
-
 @layer components {
     .filter-menu {
-
         & .filter-controls {
             @apply flex ml-5 items-center flex-grow gap-4;
 
             & input {
-                @apply px-4 w-[70%] py-2 rounded-md outline-0 border-none bg-input text-foreground ;
+                @apply px-4 w-[70%] py-2 rounded-md outline-0 border-none bg-input text-foreground;
             }
         }
     }

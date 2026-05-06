@@ -1,4 +1,4 @@
-export const BASE_URL = "https://api.rawg.io/api/";
+export const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 import axios from "axios";
 
@@ -26,4 +26,18 @@ const getGameDetails = async (gameId) => {
     }
 };
 
-export { getGameDetails, getAllGames };
+const getGamesByGenre = async (name ,genre) => {
+    try {
+        const response = await axios.get(
+            genre
+            ? `${BASE_URL}games?key=${import.meta.env.VITE_API_KEY}&genres=${genre}${`&search=${name}` || ""}`
+            : `${BASE_URL}games?key=${import.meta.env.VITE_API_KEY}${`&search=${name}` || ""}`,
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching games:", error);
+        throw error;
+    }
+};
+
+export { getGameDetails, getAllGames, getGamesByGenre };

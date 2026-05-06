@@ -1,4 +1,4 @@
-import BASE_URL from "./gamesApi";
+import { BASE_URL } from "./gamesApi";
 import axios from "axios";
 
 export const getAllCreators = async () => {

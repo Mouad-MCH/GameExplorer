@@ -3,13 +3,13 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --background: oklch(0.2077 0.0398 265.7549);
-    --foreground: oklch(0.9288 0.0126 255.5078);
+    --background: #0f172a;
+    --foreground: #e2e8f0;
     --card: oklch(0.2795 0.0368 260.031);
     --card-foreground: oklch(0.9288 0.0126 255.5078);
     --popover: oklch(0.2795 0.0368 260.031);
     --popover-foreground: oklch(0.9288 0.0126 255.5078);
-    --primary: oklch(0.6801 0.1583 276.9349);
+    --primary: #818cf8;
     --primary-foreground: oklch(0.2077 0.0398 265.7549);
     --secondary: oklch(0.3351 0.0331 260.912);
     --secondary-foreground: oklch(0.8717 0.0093 258.3382);
@@ -123,5 +123,27 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+}
+
+nav ul li a.active {
+    @apply text-primary font-semibold border-b-2 border-t-2 border-primary rounded-sm pb-2 transition-all duration-300 pt-2;
+}
+
+nav ul li a:hover {
+    @apply text-primary;
+}
+
+
+@layer components {
+    .filter-menu {
+
+        & .filter-controls {
+            @apply flex ml-5 items-center flex-grow gap-4;
+
+            & input {
+                @apply px-4 w-[70%] py-2 rounded-md outline-0 border-none bg-input text-foreground ;
+            }
+        }
     }
 }

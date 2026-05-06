@@ -8,6 +8,7 @@ import CreatorRatings from "../components/creator-details/CreatorRatings";
 import CreatorTimeline from "../components/creator-details/CreatorTimeline";
 import CreatorPlatforms from "../components/creator-details/CreatorPlatforms";
 import CreatorFooter from "../components/creator-details/CreatorFooter";
+import Spinner from "../components/ui/Spinner";
 
 const CreatorDetails = () => {
     const { id } = useParams();
@@ -33,10 +34,8 @@ const CreatorDetails = () => {
 
     if (loading)
         return (
-            <div className="mt-20 flex items-center justify-center h-[80vh]">
-                <p className="text-secondary-foreground animate-pulse text-lg">
-                    Loading...
-                </p>
+            <div className="w-full h-screen flex items-center justify-center">
+                <Spinner />
             </div>
         );
 

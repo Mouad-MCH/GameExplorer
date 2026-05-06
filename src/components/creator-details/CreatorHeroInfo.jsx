@@ -1,12 +1,15 @@
+import CreatorAvatar from "./CreatorAvatar";
+
 const CreatorHeroInfo = ({ creator }) => (
     <div className="relative p-4 z-20 w-full h-full pb-28 flex items-end">
         <div className="w-full flex items-center justify-between">
             <div className="flex gap-4">
-                <img
+                {/* <img
                     src={creator.image}
                     className="w-32 h-32 object-cover"
                     alt={creator.name}
-                />
+                /> */}
+                <CreatorAvatar creator={creator} />
                 <div>
                     <h1 className="font-press">{creator.name}</h1>
                     <div className="flex flex-wrap gap-2 mt-3">

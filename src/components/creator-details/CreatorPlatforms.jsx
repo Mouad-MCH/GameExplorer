@@ -7,9 +7,9 @@ const CreatorPlatforms = ({ platforms }) => (
             </span>
         </h2>
         <div className="flex flex-wrap gap-2">
-            {platforms?.results.map((plat) => (
+            {platforms?.results.map((plat, ndx) => (
                 <span
-                    key={plat.id}
+                    key={ndx}
                     className="px-3 py-1.5 bg-secondary text-slate-300 border border-secondary text-sm hover:border-secondary/15 transition-colors cursor-default"
                 >
                     {plat.platform.name}

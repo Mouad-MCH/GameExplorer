@@ -4,6 +4,7 @@ import Navbar from "./components/ui/Navbar";
 import Creators from "./pages/Creators";//
 import Games from "./pages/Games";
 import CreatorDetails from "./pages/CreatorDetails";
+import GameDetails from "./pages/GameDetails";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                     <Route path="/creators" element={<Creators/>} />//
                     <Route path="/games" element={<Games />} />
                     <Route path="/creators/:id" element={<CreatorDetails />} />
+                    <Route path="/details/:id" element={<GameDetails />} />
                 </Routes>
             </BrowserRouter>
         </div>

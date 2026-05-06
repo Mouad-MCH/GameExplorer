@@ -4,6 +4,7 @@ import { ArrowRight, Compass, Gamepad2, Map } from "lucide-react";
 import GameCard from "../components/ui/GameCard";
 import { NavLink } from "react-router-dom";
 import Button from "../components/ui/Button";
+import Spinner from "../components/ui/Spinner";
 
 const Home = () => {
     const [games, setGames] = useState([]);
@@ -74,11 +75,7 @@ const Home = () => {
                 </div>
 
                 {loading ? (
-                    <div className="flex items-center justify-center py-20">
-                        <div className="size-20 flex items-center justify-center p-3 border-2 border-primary/20 border-t-primary rounded-full animate-spin">
-                            <Gamepad2 className="object-contain" />
-                        </div>
-                    </div>
+                    <Spinner />
                 ) : games.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {games.slice(0, 8).map((game) => (

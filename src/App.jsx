@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/ui/Navbar";
-import gameDetailsPage from "./pages/GameDetails";
+import Games from "./pages/Games";
+import CreatorDetails from "./pages/CreatorDetails";
+import GameDetails from "./pages/GameDetails";
 
 const App = () => {
     return (
@@ -10,7 +12,9 @@ const App = () => {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/details/:id" element={<gameDetailsPage />} />
+                    <Route path="/games" element={<Games />} />
+                    <Route path="/creators/:id" element={<CreatorDetails />} />
+                    <Route path="/details/:id" element={<GameDetails />} />
                 </Routes>
             </BrowserRouter>
         </div>

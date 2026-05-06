@@ -133,3 +133,17 @@ nav ul li a.active {
 nav ul li a:hover {
     @apply text-primary;
 }
+
+
+@layer components {
+    .filter-menu {
+
+        & .filter-controls {
+            @apply flex ml-5 items-center flex-grow gap-4;
+
+            & input {
+                @apply px-4 w-[70%] py-2 rounded-md outline-0 border-none bg-input text-foreground ;
+            }
+        }
+    }
+}

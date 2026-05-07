@@ -39,7 +39,7 @@ const Navbar = () => {
                 </ul>
                 <img
                     className="size-10 rounded-lg"
-                    src="/public/user-icon.jpg"
+                    src="/user-icon.jpg"
                     alt=""
                 />
             </div>

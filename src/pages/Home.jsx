@@ -27,6 +27,16 @@ const Home = () => {
         fetchGames();
     }, []);
 
+    if (error) {
+        return (
+            <div className="flex mt-20  items-center justify-center h-screen">
+                <p className="text-red-500">
+                    Error loading games. Please try again later.
+                </p>
+            </div>
+        );
+    }
+
     return (
         <div className="bg-background mt-20 text-card-foreground">
             <div className="relative bg-[url('https://m.media-amazon.com/images/I/71G4Kg0wFTL._AC_UF894,1000_QL80_.jpg')] bg-cover bg-center h-screen before:absolute before:inset-0 before:bg-background/30 before:z-0">

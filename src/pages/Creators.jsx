@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllCreators } from "../api/creatorsApi";
 
 import CreatorCard from "../components/ui/CreatorCard";
@@ -12,7 +12,7 @@ const Creators = () => {
             setLoading(true);
             try {
                 const data = await getAllCreators();
-                setCreators(data.results); // مهم
+                setCreators(data.results);
             } catch (error) {
                 console.log("error:", error);
             } finally {

@@ -4,7 +4,7 @@ import GameCard from "./ui/GameCard.jsx";
 const DisplayGames = ({ games, loading, genre }) => {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Games</h1>
+      <h1 className="text-2xl font-press font-bold mb-4">Games</h1>
       {loading ? (
         <div className="flex items-center justify-center py-20">
           <div className="size-20 flex items-center justify-center p-3 border-2 border-primary/20 border-t-primary rounded-full animate-spin">
@@ -13,7 +13,7 @@ const DisplayGames = ({ games, loading, genre }) => {
         </div>
       ) : games.length > 0 ? (
         <div>
-          <p className="text-foreground font-medium mb-10">
+          <p className="text-foreground font-medium font-press mb-10">
             Found <span className="font-bold text-primary">{games.length}</span>{" "}
             games for genre:{" "}
             <span className="font-bold text-primary">{genre || "All"}</span>

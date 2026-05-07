@@ -9,7 +9,7 @@ const FilterMenu = ({ games, setGenre, setName }) => {
 
         <select
           onChange={(e) => setGenre(e.target.value)}
-          className="bg-input text-card-foreground p-2 rounded"
+          className="text-card-foreground p-2 rounded bg-[#2a3a55] outline-0"
         >
           <option value="">All Genres</option>
           {/* {games.map((game) => (

@@ -1,45 +1,99 @@
-# React + Vite
+# GameExplorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application for discovering games, browsing creators, and exploring game development teams. Built with React + Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Games Catalog** — Browse all games with genre filtering and search
+- **Game Details** — View detailed information for any game
+- **Development Team** — See who developed a given game
+- **Creators Directory** — Browse and explore game creator profiles
+- **Creator Profiles** — Detailed pages with ratings, platforms, timeline, and more
+- **404 Page** — Graceful handling of unknown routes
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer | Technology |
+|---|---|
+| Framework | React 19 + React Router DOM 7 |
+| Build | Vite 8 |
+| Styling | Tailwind CSS 4 |
+| Icons | lucide-react |
+| HTTP Client | Axios |
+| Linting | ESLint 10 |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
 
-# Project Structure 📂
+- Node.js 18+
+- An API key for the games/creators data source
 
-Here is the architecture of our project (React + Vite):
+### Setup
 
-```text
-GAMES/
-├── node_modules/          # Project dependencies and packages (auto-generated)
-├── public/                # Static files (favicon, images) not processed by Vite
-├── src/                   # Main source code of the application
-│   ├── api/               # API request configurations (e.g., Axios instances, fetch services)
-│   ├── assets/            # Static assets used within components (images, fonts, icons)
-│   ├── components/        # Reusable React components (Buttons, Headers, etc.)
-│   ├── hooks/             # Custom React Hooks (e.g., useAuth, useFetch)
-│   ├── pages/             # Components representing complete pages (used for routing)
-│   ├── utils/             # Utility functions and helper methods
-│   ├── App.css            # Global or App-component specific styles
-│   ├── App.jsx            # Root React component of the application
-│   ├── index.css          # Main stylesheet (CSS reset, Tailwind imports, etc.)
-│   └── main.jsx           # Application entry point (mounts React to the DOM)
-├── .env                   # Environment variables (API keys, URLs) - Do not commit to Git
-├── .gitignore             # Files and folders ignored by Git
-├── eslint.config.js       # ESLint configuration for code linting and formatting rules
-├── index.html             # Main HTML template
-├── package-lock.json      # Locks the exact versions of installed dependencies
-├── package.json           # List of project dependencies, scripts, and metadata
-├── README.md              # Project documentation (this file)
-└── vite.config.js         # Vite bundler configuration
+1. Clone the repository and install dependencies:
+   ```bash
+   git clone https://github.com/Mouad-MCH/GameExplorer.git
+   cd GameExplorer
+   npm install
+   ```
+
+2. Create a `.env` file at the project root:
+   ```env
+   VITE_BASE_URL=your_api_base_url
+   VITE_API_KEY=your_api_key
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start local development server with HMR |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+
+## Project Structure
+
 ```
+GameExplorer/
+├── public/                # Static assets (favicon, images)
+├── src/
+│   ├── api/               # Axios API services (gamesApi, creatorsApi)
+│   ├── assets/            # Images, fonts, icons used in components
+│   ├── components/        # Reusable components (Navbar, GameCard, FilterMenu, …)
+│   │   ├── ui/            # Generic UI primitives (Button, Spinner, …)
+│   │   └── creator-details/ # Sub-components for creator profile page
+│   ├── hooks/             # Custom React hooks
+│   ├── pages/             # Route-level page components
+│   │   ├── Home.jsx
+│   │   ├── Games.jsx
+│   │   ├── GameDetails.jsx
+│   │   ├── DevelopersTeam.jsx
+│   │   ├── Creators.jsx
+│   │   ├── CreatorDetails.jsx
+│   │   └── NotFound.jsx
+│   ├── utils/             # Helper functions
+│   ├── App.jsx            # Root component and router setup
+│   └── main.jsx           # Application entry point
+├── .env                   # Environment variables (not committed)
+├── vite.config.js
+└── package.json
+```
+
+## Routes
+
+| Path | Page |
+|---|---|
+| `/` | Home — hero section and recent games |
+| `/games` | Games catalog with search and genre filter |
+| `/games/:id` | Game details |
+| `/games/:id/development-team` | Development team for a game |
+| `/creators` | Creators directory |
+| `/creators/:id` | Creator profile |
+| `*` | 404 Not Found |

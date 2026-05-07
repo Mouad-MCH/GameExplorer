@@ -213,10 +213,14 @@ nav ul li a:hover {
 @layer components {
     .filter-menu {
         & .filter-controls {
-            @apply flex ml-5 items-center flex-grow gap-4;
+            @apply flex ml-5 items-center justify-between grow gap-4 bg-[#1a2a42] rounded-lg focus:border-2 focus:border-[#3a4f72];
 
             & input {
-                @apply px-4 w-[70%] py-2 rounded-md outline-0 border-none bg-input text-foreground;
+                @apply px-4 w-[70%] py-2 outline-0 border-r-2 bg-transparent text-foreground;
+            }
+            
+            & select {
+                @apply flex-grow h-full;
             }
         }
     }

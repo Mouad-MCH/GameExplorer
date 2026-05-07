@@ -41,6 +41,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
+  padding-inline: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -51,36 +52,38 @@
 
 .description {
   line-height: 1.8;
-  color: #ddd;
+  color: #ffffff;
+  text-align : justify;
 }
 
 .game-meta {
-  background: #1e1e1e;
+  background: linear-gradient(90deg, #6a6fd1, #7b7fdc);
+  color: #020626;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 0px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  align-self: flex-start;
+  height: fit-content;
+  /* align-self: flex-start; */
 }
 
 .meta-item strong {
-  color: #f39c12;
+  color:#ffff;
+  font-family:Press Start 2P;
 }
 
 .btn-secondary {
   background-color: transparent;
-  border: 2px solid #f39c12;
-  color: #f39c12;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   text-align: center;
   transition: all 0.3s ease;
-}
+  box-shadow: 2px 4px 1px #020626;
+} 
 
 .btn-secondary:hover {
-  background-color: #f39c12;
-  color: white;
+  box-shadow: none;
 }

@@ -52,7 +52,7 @@ const GameDetails = () => {
             <div className="game-content">
                 <div className="game-info">
                     <section className="description">
-                        <h2>description</h2>
+                        <h2  class="font-press mb-4 text-primary text-sm">description</h2>
                         <div
                             dangerouslySetInnerHTML={{
                                 __html: game.description_raw || "",
@@ -62,17 +62,17 @@ const GameDetails = () => {
 
                     <div className="game-meta">
                         <div className="meta-item">
-                            <strong>Rating:</strong> {game.rating} / 5
+                            <strong className="font-press text-[12px]">Rating:</strong> {game.rating} / 5
                         </div>
                         <div className="meta-item">
-                            <strong>Released:</strong> {game.released}
+                            <strong className="font-press text-[12px]">Released:</strong> {game.released}
                         </div>
                         <div className="meta-item">
-                            <strong>Genres:</strong>{" "}
+                            <strong className="font-press text-[12px]">Genres:</strong>{" "}
                             {game.genres?.map((g) => g.name).join(", ")}
                         </div>
                         <div className="meta-item">
-                            <strong>Platforms:</strong>{" "}
+                            <strong className="font-press text-[12px]">Platforms:</strong>{" "}
                             {game.platforms
                                 ?.map((p) => p.platform.name)
                                 .join(", ")}
@@ -80,7 +80,9 @@ const GameDetails = () => {
 
                         <Link
                             to={`/games/${game.id}/development-team`}
-                            className="btn-secondary"
+                             className="btn-secondary border border-primary text-white font-press text-sm transition-all duration-75  hover:translate-y-1
+                             "
+            
                         >
                             View Team Developers
                         </Link>

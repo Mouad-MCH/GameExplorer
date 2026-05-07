@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getGameDetails } from "../api/gamesApi";
+import { getGameDetails, getGameDevelopers } from "../api/gamesApi";
 import "../DetailsStyle.css";
 import { Link } from "react-router-dom";
 
@@ -18,6 +18,9 @@ const GameDetails = () => {
                 setLoading(true);
                 const data = await getGameDetails(game_id);
                 setGame(data);
+                const developers = await getGameDevelopers(game_id);
+                console.log("Developers:", developers);
+
                 setError(null);
             } catch (err) {
                 setError(err.message || "Something went wrong");
@@ -33,7 +36,6 @@ const GameDetails = () => {
     if (error) return <div className="error">{error}</div>;
     if (!game) return <div className="empty">game not found</div>;
 
-    console.log(game);
     return (
         <div className="game-detail-page">
             <div className="game-header">
@@ -77,7 +79,7 @@ const GameDetails = () => {
                         </div>
 
                         <Link
-                            to={`/games/${game.id}/developers-team`}
+                            to={`/games/${game.id}/development-team`}
                             className="btn-secondary"
                         >
                             View Team Developers

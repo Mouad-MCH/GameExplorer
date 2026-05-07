@@ -6,6 +6,7 @@ import Games from "./pages/Games";
 import CreatorDetails from "./pages/CreatorDetails";
 import GameDetails from "./pages/GameDetails";
 import DevelopersTeam from "./pages/DevelopersTeam";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                         path="/games/:id/development-team"
                         element={<DevelopersTeam />}
                     />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
         </div>

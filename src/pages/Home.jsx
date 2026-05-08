@@ -6,11 +6,33 @@ import { NavLink } from "react-router-dom";
 import Button from "../components/ui/Button";
 import Spinner from "../components/ui/Spinner";
 
+const HERO_IMAGES = [
+    "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+    "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+    "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg",
+    "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg",
+    "https://media.rawg.io/media/games/f87/f87457e8347484033cb34cde6101d08d.jpg",
+];
+
+const INTERVAL_MS = 5000;
+
 const Home = () => {
     const [games, setGames] = useState([]);
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex(
+                (prevIndex) => (prevIndex + 1) % HERO_IMAGES.length,
+            );
+        }, INTERVAL_MS);
+
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const fetchGames = async () => {
@@ -39,8 +61,31 @@ const Home = () => {
 
     return (
         <div className="bg-background mt-20 text-card-foreground">
-            <div className="relative bg-[url('https://m.media-amazon.com/images/I/71G4Kg0wFTL._AC_UF894,1000_QL80_.jpg')] bg-cover bg-center h-screen before:absolute before:inset-0 before:bg-background/30 before:z-0">
-                <div className="relative w-full z-10 flex flex-col items-start pt-40 h-full gap-4 px-10">
+            <div
+                style={{
+                    backgroundImage: `url('${HERO_IMAGES[currentIndex]}')`,
+                }}
+                className="relative bg-cover bg-center
+            before:absolute before:inset-0 before:bg-black/50 before:z-0 h-[90vh] flex items-center justify-start"
+            >
+                <div
+                    key={currentIndex}
+                    className=" absolute bottom-0 w-full transition-all duration-1000 ease-in-out max-w-full p-4"
+                >
+                    <p className="font-press text-[10px]">
+                        image {currentIndex + 1}/{HERO_IMAGES.length}
+                    </p>
+
+                    <div className="mt-2 flex items-center gap-1">
+                        {HERO_IMAGES.map((_, index) => (
+                            <div
+                                className={`w-10 h-0.5 bg-primary/20 ${index <= currentIndex ? "bg-white" : ""}`}
+                                key={index}
+                            />
+                        ))}
+                    </div>
+                </div>
+                <div className="absolute bottom-20 w-full z-10 flex flex-col items-start  gap-4 px-10">
                     <p className="uppercase text-primary bg-primary/10 w-fit text-[10px] border border-primary/30 p-1 ">
                         new area of gaming
                     </p>

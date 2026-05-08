@@ -76,10 +76,10 @@ const Home = () => {
                         image {currentIndex + 1}/{HERO_IMAGES.length}
                     </p>
 
-                    <div className="mt-2 grid w-full items-center grid-cols-5 gap-1">
+                    <div className="mt-2 flex items-center justify-center gap-2">
                         {HERO_IMAGES.map((_, index) => (
                             <div
-                                className={` h-0.5 bg-primary/20 ${index <= currentIndex ? "bg-white" : ""}`}
+                                className={`rounded-full transition-all duration-300 ${index === currentIndex ? "w-4 h-2 bg-white" : "w-1.5 h-1.5 bg-primary/40"}`}
                                 key={index}
                             />
                         ))}

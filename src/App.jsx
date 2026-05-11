@@ -7,6 +7,7 @@ import CreatorDetails from "./pages/CreatorDetails";
 import GameDetails from "./pages/GameDetails";
 import DevelopersTeam from "./pages/DevelopersTeam";
 import NotFound from "./pages/NotFound";
+import Publishers from "./pages/publishers";
 
 const App = () => {
     return (
@@ -24,7 +25,10 @@ const App = () => {
                         element={<DevelopersTeam />}
                     />
                     <Route path="*" element={<NotFound />} />
+                    <Route path="/publishers" element={<Publishers />} />
                 </Routes>
+
+                
             </BrowserRouter>
         </div>
     );

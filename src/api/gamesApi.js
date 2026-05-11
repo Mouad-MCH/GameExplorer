@@ -55,4 +55,21 @@ const getGameDevelopers = async (gameId) => {
     }
 };
 
-export { getGameDetails, getAllGames, getGamesByGenre, getGameDevelopers };
+
+const getPublisher = async () => {
+    try {
+        const response = await axios.get(
+            `${BASE_URL}publishers?key=${import.meta.env.VITE_API_KEY}`,
+        );
+
+        return response.data;
+    } catch (error) {
+        console.error(
+            `Error fetching game developers for ID ${' ' }:`,
+            error,
+        );
+        throw error;
+    }
+};
+
+export { getGameDetails, getAllGames, getGamesByGenre, getGameDevelopers, getPublisher };
